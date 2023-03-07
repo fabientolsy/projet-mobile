@@ -8,6 +8,7 @@ Le code de l'application de base est dans le dossier "Projet Mobile" et voici le
 
 https://www.youtube.com/watch?v=SK39b8DXGn0
 
+
 Afin de rendre l'applicaton plus portative et multi-plateformes, j'ai développé une deuxième version utilisant Cordova. Le code de cette évolution est disponible dans le dossier "Projet Mobile + Cordova" et voici le lien de la démonstration sur YouTube:
 
 https://www.youtube.com/watch?v=mHrm_Vagz5Q
