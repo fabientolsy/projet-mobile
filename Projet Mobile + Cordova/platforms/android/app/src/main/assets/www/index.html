@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+
+      <meta charset="utf-8">
+      <!--
+      Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+          https://cordova.apache.org/docs/en/latest/
+      Some notes:
+          * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+          * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+              * Enable inline JS: add 'unsafe-inline' to default-src
+      -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="msapplication-tap-highlight" content="no">
+      <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+      <meta name="color-scheme" content="light dark">
+
+    <title>Liste des films pour Noël</title>
+    
+    <link rel="stylesheet" href="decoration/application.css">
+
+    <script src="cordova.js"></script>
+
+	<script src="modele/Film.js"></script>
+    <script src="donnees/FilmDAO.js"></script>
+	
+	<script src="vue/VueFilm.js"></script>
+	<script src="vue/VueAjouterFilm.js"></script>
+	<script src="vue/VueModifierFilm.js"></script>
+    <script src="vue/VueListeFilm.js"></script>
+     	  
+    <script defer src="Application.js"></script>
+
+
+  </head>
+
+  <body>
+    <div id="page-chargement-application">Chargement de l'application </div>
+<img src="decoration/illustration/logoModifier.jpg">
+    <script type="plaim/text" id="html-vue-liste-film">
+      <div class="page" id="page-liste">
+        <h1>Liste des films</h1>
+
+        <a class="action" href="#ajouter-film">Ajouter un film</a>
+
+        <ul id="liste-film">
+          <li><a href="#film/{Film.id}" class="liste-film-item">{Film.titre}</a> <a href="#modifier-film/{Film.id}" class="lien"> <img style="margin-left: 40%" src="decoration/illustration/logoModifier.jpg"></a> </li>
+        </ul>
+      </div>
+  	</script>
+	
+	<script type="plain/text" id="html-vue-ajouter-film">
+	   <div class="page">
+		<h1>Ajouter un film</h1>
+		<form id="formulaire-ajouter">
+		  <fieldset>
+			<legend>Identification</legend>
+			<div>
+			  <label for="film-titre">Titre</label>
+			  <input type="text" id="film-titre"/>
+			</div>
+			<div>
+			  <label for="film-realisateur">Realisateur</label>
+			  <input type="text" id="film-realisateur"/>
+			</div>
+		  </fieldset>
+		  <fieldset>
+			<legend>D&eacute;tails</legend>
+			<div>
+			  <label for="film-description">Description</label>
+			  <textarea id="film-description"></textarea>
+			</div>
+		  </fieldset>
+		  <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+		</form>
+		<a href="#" class="action">Annuler</a>
+	  </div>
+	 </script>
+
+	 <script type="plain/text" id="html-vue-modifier-film">
+		<div class="page">
+		 <h1>Modifier un film</h1>
+		 <form id="formulaire-modifier">
+		   <fieldset>
+			 <legend>Identification</legend>
+			 <div>
+			   <label for="film-titre">Titre</label>
+			   <input type="text" id="film-titre"/>
+			 </div>
+			 <div>
+			   <label for="film-realisateur">Realisateur</label>
+			   <input type="text" id="film-realisateur"/>
+			 </div>
+		   </fieldset>
+		   <fieldset>
+			 <legend>D&eacute;tails</legend>
+			 <div>
+			   <label for="film-description">Description</label>
+			   <textarea id="film-description"></textarea>
+			 </div>
+		   </fieldset>
+		   <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+		 </form>
+		 <a href="#" class="action">Annuler</a>
+	   </div>
+	  </script>
+
+	 <script type="plain/text" id="html-vue-film">
+		<div class="page">
+			<h1>Details du film</h1>
+			<h2 id="film-titre"></h2>
+			<p id="film-realisateur"></p>
+			<p id="film-description"></p>
+			<a href="#" class="action">Revenir &agrave; la liste</a>
+		</div>
+	 </script>
+  </body>
+</html>
